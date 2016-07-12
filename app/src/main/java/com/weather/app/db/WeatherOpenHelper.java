@@ -13,6 +13,18 @@ public class WeatherOpenHelper extends SQLiteOpenHelper {
             + "province_name text, "
             + "province_code text)";
 
+    private static final String CREATE_CITY = "create table city ("
+            + "id integer primary key autoincrement"
+            + "city_name text, "
+            + "city_code text, "
+            + "province_id integer)";
+
+    private static final String CREATE_COUNTY = "create table county ("
+            + "id integer primary key autoincrement"
+            + "county_name text, "
+            + "county_code text, "
+            + "city_id integer)";
+
     public WeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
